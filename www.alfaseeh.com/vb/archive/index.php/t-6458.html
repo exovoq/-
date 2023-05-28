@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="rtl" lang="ar">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=windows-1256" />
+	<meta name="keywords" content="العمل,البيانات,الموضوع,وظيفة,ينجز,مشاركة,الأخيرة,المشاركات,المنتدى,التحكم,problem,إضافة,تقوم,أكثر,العملية,سالفة,بتحديث,ولكنها,الذكر,اعتراها,المشاركات،,اكتمالها,محدثَّة,أرجو,للموضوع,الإحصائية,تسجل,يمنع,الموضوعات,فتبقي,الإعتمادية,إدخال,السادة,يكن،,rollback,السابق,استرجاع,يمكن,وهذه,الوضع,فيها,وكأن,الجزء,بمحو,نسميها,خلللا,المنفذ,فالواضح,أنها,dispatched" />
+	<meta name="description" content="هذا الموضوع سبق لي إدراجه في منتدى الملحوظات 
+وأعيد طرحه هنا حتى يكون أكثر وضوحا 
+ 
+الملاحظ منذ يومين تقريبا أن أكثر المشاركات الأخيرة لم تعد تؤثر في تغيير بيانات الموضوع، من حيث عدد المشاركات وتاريخ آخر مشاركة واسم كاتبها، وترتيب الموضوع في صفحة المنتدى الفرعي. 
+وصارت الصفحة الرئيسية للمنتدى مضللة، وتوحي بعد وجود مشاركات جديدة. 
+وأرى أن المنتدى يحتاج لصيانة عاجلة، ربما يحلها تنزيل قاعدة البيانات ثم تحميلها مرة ثانية. 
+الكلام التالي متخصص ويعرفه من يتعامل مع قواعد البيانات 
+فالأمر يبدو كما لو" />
+	
+	<title> مشكلة بقاعدة البيانات تحتاج إلى إصلاح عاجل [الأرشيف]  - شَبَكةُ الفَصِيحِ لِعُلُومِ اللُّغةِ العَرَبِيّةِ</title>
+	<link rel="stylesheet" type="text/css" href="http://www.alfaseeh.com/vb/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="http://www.alfaseeh.com/vb/archive/index.php">شَبَكةُ الفَصِيحِ لِعُلُومِ اللُّغةِ العَرَبِيّةِ</a> &gt; <a href="http://www.alfaseeh.com/vb/archive/index.php/f-34.html">قِسْم التَّطْوِيرِ</a> &gt; <a href="http://www.alfaseeh.com/vb/archive/index.php/f-32.html">الاقْتِراحات والتَّطْوِير</a> &gt;  مشكلة بقاعدة البيانات تحتاج إلى إصلاح عاجل</div>
+<hr />
+<div class="pda"><a href="http://www.alfaseeh.com/vb/archive/index.php/t-6458.html?login=1" rel="nofollow">تسجيل الدخول</a></div>
+<p class="largefont">اعرض النسخة الكاملة : <a href="http://www.alfaseeh.com/vb/showthread.php?t=6458">مشكلة بقاعدة البيانات تحتاج إلى إصلاح عاجل</a></p>
+<hr />
+<div class="floatcontainer">  </div><br />
+<div class="post"><div class="posttop"><div class="username">المهندس</div><div class="date">08-05-2005, 05:31 PM</div></div><div class="posttext">هذا الموضوع سبق لي إدراجه في منتدى الملحوظات<br />
+وأعيد طرحه هنا حتى يكون أكثر وضوحا<br />
+<br />
+الملاحظ منذ يومين تقريبا أن أكثر المشاركات الأخيرة لم تعد تؤثر في تغيير بيانات الموضوع، من حيث عدد المشاركات وتاريخ آخر مشاركة واسم كاتبها، وترتيب الموضوع في صفحة المنتدى الفرعي.<br />
+وصارت الصفحة الرئيسية للمنتدى مضللة، وتوحي بعد وجود مشاركات جديدة.<br />
+وأرى أن المنتدى يحتاج لصيانة عاجلة، ربما يحلها تنزيل قاعدة البيانات ثم تحميلها مرة ثانية.<br />
+الكلام التالي متخصص ويعرفه من يتعامل مع قواعد البيانات<br />
+فالأمر يبدو كما لو كانت وظيفة التحكم في اعتماد الإدخالات (Commitment Control) معطلة.<br />
+وهي وظيفة هامة جدا تمنع إنجاز جزء من العمل مع ترك جزء منه، بل إما أن ينجز العمل كاملا أو يرفض ولا ينجز منه شيء.<br />
+فالعمل المطلوب إنجازه من إضافة لملفات وتعديل في أخرى أو إضافة إليها<br />
+كل هذا العمل يعتبر وحدة عمل منطقية واحدة (Logical unit of work)<br />
+يجب ألا تتجزأ، فإن اعتراها ما يمنع اكتمالها فإن وظيفة التحكم في الإعتمادية سالفة الذكر تقوم بمحو ذلك الجزء المنفذ من العمل وكأن لم يكن، وهذه العملية الأخيرة يمكن أن نسميها استرجاع الوضع السابق (Rollback)<br />
+هذه العملية أرى فيها خلللا<br />
+فالواضح أنه عند إدخال مشاركة أنها تسجل على ملف المشاركات،<br />
+ولكنها لا تقوم بتحديث سجل الموضوع في ملف الموضوعات فتبقي البيانات الإحصائية للموضوع غير محدثَّة.<br />
+<br />
+أرجو من السادة المشرفين الاهتمام بالأمر.<br />
+<br />
+وهذا نص الرسالة التي تظهر عقب تسجيل موضوع:<br />
+<br />
+There seems to have been a slight problem with the شبكة الفصيح لعلوم اللغة العربية ~ database.<br />
+Please try again by pressing the refresh button in your browser.<br />
+<br />
+An E-Mail has been dispatched to our Technical Staff, who you can also contact if the problem persists.<br />
+<br />
+We apologise for any inconvenience.<br />
+<br />
+<br />
+أخوكم /المهندس</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">الطائي</div><div class="date">08-05-2005, 06:28 PM</div></div><div class="posttext">نعم أيها المهندس الفاضل ، نضم صوتنا إلى صوتك ، ونطالب بعودة منتدانا الحبيب كما كان .<br />
+<br />
+ماشاء الله تبارك الله ، مهندس حاسوب ، ومهندس كلمة ، حفظك الله من كل سوء ...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">الطائي</div><div class="date">08-05-2005, 06:31 PM</div></div><div class="posttext">نعم أيها المهندس الفاضل ، نضم صوتنا إلى صوتك ، ونطالب بعودة منتدانا الحبيب كما كان ...<br />
+<br />
+ما شاء الله تبارك الله ، مهندس حاسوب ، ومهندس كلمة ، حفظك الله من كل سوء ...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">محمد التويجري</div><div class="date">08-05-2005, 11:44 PM</div></div><div class="posttext">السلام عليكم<br />
+<br />
+سيتم النظر في المشكلة إن شاء الله<br />
+<br />
+شكرا لك أخي الكريم المهندس</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">محمد التويجري</div><div class="date">08-05-2005, 11:52 PM</div></div><div class="posttext">تم حل المشكلة والحمد لله<br />
+<br />
+هذه المشكلة طبيعية جدا وتحدث دوما.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">المهندس</div><div class="date">09-05-2005, 12:02 AM</div></div><div class="posttext">جزاك الله خيرا أستاذي القاسم<br />
+<br />
+أشكرك على الاستجابة السريعة</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">الطائي</div><div class="date">09-05-2005, 07:46 AM</div></div><div class="posttext">الشكر لأستاذنا القاسم لاهتمامه</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">المهندس</div><div class="date">09-05-2005, 09:05 AM</div></div><div class="posttext">أستاذي العزيز/ الطائي<br />
+<br />
+عذرا فقد أنساني أن أحييك انشغالي<br />
+ولكنك في الحقيقة لست غائبا عن بالي<br />
+<br />
+وقد تزين المنتدى بمشاركاتك المثمرة<br />
+وظهر ما أخفيت من قدرات مبهرة<br />
+<br />
+فأرجو ألا يطول انشغالي ويزداد<br />
+وتلقاني عند &quot;العذر يا  بغداد&quot;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">محمد التويجري</div><div class="date">09-05-2005, 04:56 PM</div></div><div class="posttext">الشكر لكم جميعا</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">الطائي</div><div class="date">09-05-2005, 06:20 PM</div></div><div class="posttext">أستاذي المهندس ...<br />
+ذهبتُ هناك ووجدت ما سرّني ؛ فلك الشكر ...<br />
+<br />
+والشكر لأستاذنا القاسم ، فقد أكرمنا بسرعة إصلاح الخلل اليسير ، وأتحفنا بفهرسة المنتدى ، يالها من هدية مبهجة ...</div></div><hr />
+
+ 
+<div id="copyright">vBulletin&reg; v4.2.2, Copyright &copy;2000-2023, Jelsoft Enterprises Ltd. تعريب شَبَكةُ الفَصِيحِ لِعُلُومِ اللُّغةِ العَرَبِيّةِ</div>
+</div>
+</body>
+</html>

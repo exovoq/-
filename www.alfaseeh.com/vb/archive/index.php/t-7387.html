@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="rtl" lang="ar">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=windows-1256" />
+	<meta name="keywords" content="التراث,العربي,موسوعات,تركيبي,نظام,منها,أستفيد,أصبحت,التحميل,لهذه,المشكلة,لديكم,تقبل,الآن,القديم,الموسوعة,الذهبية,الحديث,والغريب,المعاجم,النحو,الأدب,وكلها,نظامي,أفتوني,تعمل,إنتاج,مؤسسة,كانت" />
+	<meta name="description" content="لدي موسوعات (النحو العربي ) (الأدب العربي) ( المعاجم والغريب) ( الموسوعة الذهبية في الحديث) وكلها من إنتاج مؤسسة التراث ... كانت تعمل معي في نظامي القديم (98) أما الآن فقد أصبحت لا أستفيد منها بعد تركيبي نظام (xp) إذ لا تقبل التحميل ... هل لديكم حل لهذه المشكلة ؟؟" />
+	
+	<title> أفتوني ... في موسوعات التراث ...!! [الأرشيف]  - شَبَكةُ الفَصِيحِ لِعُلُومِ اللُّغةِ العَرَبِيّةِ</title>
+	<link rel="stylesheet" type="text/css" href="http://www.alfaseeh.com/vb/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="http://www.alfaseeh.com/vb/archive/index.php">شَبَكةُ الفَصِيحِ لِعُلُومِ اللُّغةِ العَرَبِيّةِ</a> &gt; <a href="http://www.alfaseeh.com/vb/archive/index.php/f-1.html">القِسْمُ العامُّ</a> &gt; <a href="http://www.alfaseeh.com/vb/archive/index.php/f-48.html">المُنْتَدَيات العامّة</a> &gt; <a href="http://www.alfaseeh.com/vb/archive/index.php/f-28.html">المُنْتَدى التّقَنِيُّ</a> &gt;  أفتوني ... في موسوعات التراث ...!!</div>
+<hr />
+<div class="pda"><a href="http://www.alfaseeh.com/vb/archive/index.php/t-7387.html?login=1" rel="nofollow">تسجيل الدخول</a></div>
+<p class="largefont">اعرض النسخة الكاملة : <a href="http://www.alfaseeh.com/vb/showthread.php?t=7387">أفتوني ... في موسوعات التراث ...!!</a></p>
+<hr />
+<div class="floatcontainer">  </div><br />
+<div class="post"><div class="posttop"><div class="username">الكوفي</div><div class="date">13-07-2005, 06:57 PM</div></div><div class="posttext">لدي موسوعات (النحو العربي ) (الأدب العربي) ( المعاجم والغريب) ( الموسوعة الذهبية في الحديث) وكلها من إنتاج مؤسسة التراث ... كانت تعمل معي في نظامي القديم (98) أما الآن فقد أصبحت لا أستفيد منها بعد تركيبي نظام (xp) إذ لا تقبل التحميل ... هل لديكم حل لهذه المشكلة ؟؟</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">الأحمدي</div><div class="date">13-07-2005, 11:19 PM</div></div><div class="posttext">السلام عليكم و رحمة الله و بركاته<br />
+أخي الكريم، لعلك إن فهمت الكيفية التي تعمل بها موسوعات التراث تستطيع أن تحل المشكلة بإذن الله:<br />
+أربعة ملفات مهمة:<br />
+الملف المنفذ، و يكون امتداده : exe<br />
+ملف الإعدادات، و امتداده : ini<br />
+ملف قاعدة بيانات المستخدم، اسمه : dbuser.mdb<br />
+ملف قاعدة بيانات البرنامج، ضخم و اسمه : main.mdb<br />
+<br />
+الملف المنفذ عندما يتم تحميله يذهب ليقرأ بعض الإرشادات من ملف الإعدادات و ملف قاعدة بيانات المستخدم، فلا بد أن يكونا في نفس مجلد الملف المنفذ.<br />
+ملف الإعدادات عبارة عن ملف نصي بسيط، بإمكانك فتحه باستعمال الـ notepad لتجده يحتوى على مسار قاعدة بيانات البرنامج، تأكد أن هذا المسار صحيح.<br />
+هذا مثال لما قد تلقاه في ملف الإعدادات، و هو قد يختلف من كمبيوتر لآخر:<br />
+[PATH]<br />
+ProgPath=D:\<br />
+<br />
+(مع مراعاة اتجاه الكتابة هنا)<br />
+<br />
+إذن في المثال السابق ملف قاعدة بيانات البرنامج موجود على المسار : D:\data\main.mdb<br />
+(المجلد data ضروري و يفترضه البرنامج المنفذ تلقائيا، و لا يذكر في ملف الإعدادات)<br />
+<br />
+أغلب المشاكل تتلخص في خطأ ما خلال هذه العملية، أو خلل في نظام التشغيل نفسه.<br />
+<br />
+أرجو أن ينفعك ما كتبته، و لا تنسانا من دعائك.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">أبو سارة</div><div class="date">14-07-2005, 12:42 PM</div></div><div class="posttext">السلام عليكم<br />
+عندي نفس المشكلة التي تحدث عنها الأستاذ الكوفي ، وفي ظني أنها موسوعات لاتعمل في بيئة الاكس بي الجديدة0<br />
+- - - - - <br />
+الأستاذ الأحمدي وفقه الله<br />
+هل أفهم من كلامك أن هناك طريقة يمكن عملها فتعمل الموسوعات مع الاكس بي؟</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">الأحمدي</div><div class="date">14-07-2005, 04:57 PM</div></div><div class="posttext">و عليكم السلام و رحمة الله و بركاته<br />
+يا أستاذي و أنا تلميذك أبا سارة، أظنها تعمل إن شاء الله و لا يوجد نظريا ما يمنعها من العمل في بيئة إكس بي الجديدة.<br />
+قد تحدث مشاكل لكن يمكن حلها إن شاء الله.<br />
+أغلب - إن لم يكن كل - برامج موسوعات التراث صيغت بلغة الفيجوال بيسك، و هذه اللغة غير مستقلة كليا عن نظام التشغيل، لذلك تحتاج إلى ملفات تشغيل أساسية run-time files يجب أن تتوفر في نظام التشغيل نفسه، و بنفس نسخة لغة الفيجوال بيسك (بمعنى اذا صنع البرنامج بلغة فيجوال بيسك النسخة الخامسة يحتاج إلى ملفات تشغيل فيجوال بيسك الخامسة، و قد لا يعمل أحيانا مع السادسة).<br />
+و أيضا يتكون برنامج الفيجوال بيسك من مركّبات components يجب تسجيلها في نظام التشغيل قبل إطلاق البرنامج، و من هذه المركّبات ما يسمى بـ active x controls.<br />
+<br />
+سأضرب لكم مثالا عسى أن يكون فيه الحل:<br />
+لدي موسوعة الأدب العربي منزّلة على نظام التشغيل الموجود على السواقة الأولى  C و هو وندوز 2000<br />
+و حاليا أستعمل نظام التشغيل الموجود على السواقة الثانية D، و هو وندوز إكس بي<br />
+فماذا يحدث إذا حاولت استعمال موسوعة الأدب العربي المنزلة على وندوز 2000 في نظام التشغيل هذا - إكس بي؟ مشكلة طبعا.<br />
+فتحت المجلد الذي فيه ملف التنفيذ، أطلقته، فأظهر المشكلة التالية:<br />
+Run-time error &quot;...&quot;:<br />
+component COMDLG32.ocx not correctly registered: file is missing or invalid.<br />
+<br />
+إذن هناك ملف ناقص، اسمه COMDLG32.ocx، يجب تحميله من الانترنت و تنصيبه في الجهاز.<br />
+هذه المحطة:<br />
+http://www.martin2k.co.uk/vb6/vb6download.php#ocx<br />
+يوجد فيها أغلب الملفات من هذا النوع.<br />
+<br />
+حملناه و نصبناه، و تنصيبه ليس إلا وضعه في المجلد: \windows\system32<br />
+<br />
+الآن نقوم بتشغيل الملف المنفذ مرة أخرى...مشكلة أخرى:<br />
+عند الضغط على زر &quot;بحث&quot; يظهر هذا التنبيه:<br />
+run-time error &quot;339&quot;:<br />
+component DBgrid32.ocx is not correctly registered: file is missing or invalid.<br />
+<br />
+نعيد الكرة، نبحث عن الملف في تلك المحطة، نحمّله لنجد ملفا مضغوطا و فيه ثلاثة ملفات:<br />
+dbgrid32.ocx و dbgrid32.dep نضعهما في \windows\system32<br />
+dbgrid32.reg نطلقه و نضيف ما فيه من معلومات إلى سجلّ الوندوز.<br />
+<br />
+الآن الموسوعة جاهزة للتصفح<br />
+أرجو من الله أن يكون ما ذكرته نافعا.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">محمد التويجري</div><div class="date">14-07-2005, 07:04 PM</div></div><div class="posttext">السلام عليكم<br />
+<br />
+الموسوعات تعمل في نظام XP لكن حين تنصيبها قد يحدث خطأ.<br />
+<br />
+عند فتح مجلد مكتبة النحو والصرف مثلا سنجد مجموعة ملفات أهمها ملفان ومجلد<br />
+main.ini<br />
+Nahaw.exe<br />
+والمجلد data<br />
+المجلدdata توجد فيه قاعدة البيانات main.mdb أو سترى اسمها هكذا main<br />
+<br />
+بالنسبة للملفmain.ini<br />
+افتحه لتجد فيه المسار الذي يصل بك إلى البرنامج وطبعا عند فتحه اضغط الزرين shift+ctrl   اللذين في اليسارلتحويل اتجاه الكتابة لتبدأ من اليسار<br />
+ستجد مساره هكذا<br />
+<br />
+<br />
+<br />
+[PATH]<br />
+ProgPath=C:\Program Files\مكتبة النحو و الصرف\<br />
+<br />
+طبعا إذا كان المجلد data موجودا داخل هذا المسار وداخله قاعدة البيانات سيعمل<br />
+<br />
+ولكن قد يكون الموجود في الملف main.ini <br />
+هكذ<br />
+<br />
+ProgPath=F:\<br />
+أو<br />
+ProgPath=E:\<br />
+أو<br />
+ProgPath=H:\<br />
+<br />
+أو أي حرف يدل على محرك الأقراص cd-rom<br />
+في هذه الحالة لن يعمل البرنامج إلا بوجود القرص في محرك الأقراص<br />
+<br />
+ولحل هذه المشكلة<br />
+انسخ المجلد data  إلى هذا المسار في جهازك<br />
+<br />
+C:\Program Files\مكتبة النحو و الصرف\<br />
+<br />
+وغيرما في الملف الملف main.ini إلى التالي<br />
+<br />
+<br />
+[PATH]<br />
+ProgPath=C:\Program Files\مكتبة النحو و الصرف\</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">2007 _عمورة</div><div class="date">03-02-2009, 10:23 PM</div></div><div class="posttext">السلام عليكم ورحمة الله وبركاتة<br />
+أخي الكريم توجد مشكلة عند فتحت المجلد الذي فيه ملف التنفيذ، أطلقته، فأظهر المشكلة التالية:<br />
+run-time error &quot;339&quot;:<br />
+component KButton.ocx is not correctly registered: file is missing or invalid.<br />
+<br />
+الضغط على زر &quot;بحث&quot; يظهر هذا التنبيه:<br />
+could not find file (win_sys.dl<br />
+وشكر :;allh</div></div><hr />
+
+ 
+<div id="copyright">vBulletin&reg; v4.2.2, Copyright &copy;2000-2023, Jelsoft Enterprises Ltd. تعريب شَبَكةُ الفَصِيحِ لِعُلُومِ اللُّغةِ العَرَبِيّةِ</div>
+</div>
+</body>
+</html>
